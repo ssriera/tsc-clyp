@@ -1,0 +1,70 @@
+/*// Globals \\*/
+
+$primary-font: 'Source Sans Pro', sans-serif;
+$background-color: #FAFAFA;
+$highlight-blue: #3599D5;
+$primary-color: #605F59;
+$title-gray: #4D4A46;
+$nav-primary-link: #7A7773; 
+$nav-text-gray: #C8C7BD;
+$nav-link-hover: #3599D5;
+$nav-link-active: #3599D5;
+
+* {
+	font-family: $primary-font;
+	line-height: 1.4em;
+	background-color: $background-color;
+}
+h1, h3 {
+	color: $title-gray;
+}
+h2, h5, h6, p {
+	color:$primary-color;
+}
+h4 {
+	color:$highlight-blue;
+}
+body {
+	background-color: $background-color;
+	color:$primary-color;
+}
+.layout-section div {
+	padding: 0;
+}
+.side-nav p {
+	color:$nav-text-gray;
+}
+.side-nav li:active {
+	font-family: $primary-font;
+}
+.side-nav li.active>a:first-child:not(.button) {
+    font-family: $primary-font;
+}
+.side-nav li a:not(.button) {
+	padding: 0;
+	font-size: 16px;
+}
+
+/*// Side NavBar \\*/
+
+$include-html-nav-classes: true;
+
+// We use this to control padding.
+$side-nav-padding: rem-calc(0 0 0 0);
+
+// We use these to control list styles.
+$side-nav-list-type: none;
+$side-nav-list-position: inside;
+$side-nav-list-margin: rem-calc(0 0 0 0);
+
+
+// We use these to control link styles.
+$side-nav-link-color: $nav-primary-link;
+$side-nav-link-color-active: $nav-link-active;
+$side-nav-link-color-hover: $nav-link-hover;
+$side-nav-font-size: rem-calc(18);
+$side-nav-font-weight: normal;
+$side-nav-font-weight-active: normal;
+$side-nav-font-family: $primary-font;
+$side-nav-font-family-active: $primary-font;
+

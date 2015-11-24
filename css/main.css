@@ -1,0 +1,38 @@
+/*// Globals \*/
+* {
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 1.4em;
+  background-color: #FAFAFA; }
+
+h1, h3 {
+  color: #4D4A46; }
+
+h2, h5, h6, p {
+  color: #605F59; }
+
+h4 {
+  color: #3599D5; }
+
+body {
+  background-color: #FAFAFA;
+  color: #605F59; }
+
+.layout-section div {
+  padding: 0; }
+
+.side-nav p {
+  color: #C8C7BD; }
+
+.side-nav li:active {
+  font-family: "Source Sans Pro", sans-serif; }
+
+.side-nav li.active > a:first-child:not(.button) {
+  font-family: "Source Sans Pro", sans-serif; }
+
+.side-nav li a:not(.button) {
+  padding: 0;
+  font-size: 16px; }
+
+/*// Side NavBar \*/
+
+/*# sourceMappingURL=main.css.map */
