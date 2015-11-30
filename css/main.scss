@@ -1,5 +1,4 @@
 /*// Globals \\*/
-
 $primary-font: 'Source Sans Pro', sans-serif;
 $background-color: #FAFAFA;
 $highlight-blue: #3599D5;
@@ -7,13 +6,20 @@ $primary-color: #605F59;
 $title-gray: #4D4A46;
 $nav-primary-link: #7A7773; 
 $nav-text-gray: #C8C7BD;
-$nav-link-hover: #3599D5;
-$nav-link-active: #3599D5;
+$nav-link-hover: #3498DB;
+$nav-link-active: #3498DB;
 
 * {
 	font-family: $primary-font;
 	line-height: 1.4em;
 	background-color: $background-color;
+}
+
+
+ /*// Body \\*/
+body {
+	background-color: $background-color;
+	color:$primary-color;
 }
 h1, h3 {
 	color: $title-gray;
@@ -24,47 +30,50 @@ h2, h5, h6, p {
 h4 {
 	color:$highlight-blue;
 }
-body {
-	background-color: $background-color;
-	color:$primary-color;
-}
 .layout-section div {
 	padding: 0;
 }
 .side-nav p {
 	color:$nav-text-gray;
 }
-.side-nav li:active {
-	font-family: $primary-font;
-}
-.side-nav li.active>a:first-child:not(.button) {
-    font-family: $primary-font;
-}
-.side-nav li a:not(.button) {
-	padding: 0;
-	font-size: 16px;
-}
+
 
 /*// Side NavBar \\*/
-
 $include-html-nav-classes: true;
 
-// We use this to control padding.
-$side-nav-padding: rem-calc(0 0 0 0);
-
-// We use these to control list styles.
-$side-nav-list-type: none;
-$side-nav-list-position: inside;
-$side-nav-list-margin: rem-calc(0 0 0 0);
-
-
-// We use these to control link styles.
-$side-nav-link-color: $nav-primary-link;
-$side-nav-link-color-active: $nav-link-active;
-$side-nav-link-color-hover: $nav-link-hover;
-$side-nav-font-size: rem-calc(18);
-$side-nav-font-weight: normal;
-$side-nav-font-weight-active: normal;
-$side-nav-font-family: $primary-font;
-$side-nav-font-family-active: $primary-font;
-
+.side-nav {
+  display: block;
+  font-family: $primary-font;
+  list-style-position: outside;
+  list-style-type: none;
+  margin: 0.75;
+  padding: 0.75rem 0; }
+  .side-nav li {
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 0 0 0rem 0; }
+    .side-nav li a:not(.button) {
+      color: $nav-primary-link;
+      display: block;
+      margin: 0;
+      padding: 0rem; }
+      .side-nav li a:not(.button):hover, .side-nav li a:not(.button):focus {
+        background: rgba(0, 0, 0, 0.025);
+        color: $nav-link-hover }
+      .side-nav li a:not(.button):active {
+        color: $nav-link-active }
+    .side-nav li.active > a:first-child:not(.button) {
+      color: $nav-link-active;
+      font-family: $primary-font;
+      font-weight: normal; }
+    .side-nav li.divider {
+      border-top: 1px solid;
+      height: 0;
+      list-style: none;
+      padding: 0;
+      border-top-color: none; }
+    .side-nav li.heading {
+      color: $nav-primary-link;
+      font-size: 0.875rem;
+      font-weight: bold;
+      text-transform: uppercase; }

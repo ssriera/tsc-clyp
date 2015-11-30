@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="no-js" lang="en">
   <head prefix="og: http://ogp.me/ns# dc: http://purl.org/dc/terms/">
@@ -21,22 +20,20 @@
     <div class="contain-to-grid">
       <nav class="top-bar" data-topbar="" role="navigation">
       </nav>
-    </div>
-    <!-- // End Navbar \\ -->
+    </div> <!-- // End Navbar \\ -->
     <!-- // Header \\ -->
     <div class="layout-section text-left">
       <div class="row">
-        <div class="small-12 medium-10 large-8 large-offset-4 columns">
+        <div class="small-12 medium-10 large-8 small-offset-4 medum-offset-6 large-offset-4 columns">
           <br>
           <h1><strong>API Documentation</strong></h1>
           <br>
         </div>
       </div>
-    </div>
-    <!-- //End Header \\ -->
+    </div> <!-- //End Header \\ -->
     <!-- // Main \ -->
     <section class="row">
-      <!-- // Left Nav \\ -->
+      <!-- // Side Nav \\ -->
       <div class="small-6 medium-3 large-2 columns">
         <ul class="side-nav" role="navigation" title="link list">
           <li role="menuitem"><a href="#">About</a></li>
@@ -54,11 +51,10 @@
           <li role="menuitem"><a href="#">Subreddit</a></li>
           <li role="menuitem"><a href="#">Feedback</a></li>
         </ul>
-      </div>
-      <!-- // End Left Nav \\ -->
+      </div> <!-- // End Side Nav \\ -->
       <!-- // Body \\ -->
       <div class="small-12 medium-10 large-8 large-offset-2 columns">
-        <section class="row m-homepage--section">
+        <section class="row">
           <h3>Audio file</h3>
           <h4>POST https://upload.clyp.it/upload</h4>
           Upload an audio file. Accepted file types are mp3, ogg, m4a, wav, aiff, aif and 3gpp. Regardless of file type when uploading, a resulting mp3 and ogg will be created and made available. The audio file can be added to a playlist by providing a playlistId and the playlistUploadToken. Otherwise, a new playlist will automatically be created. A playlist can contain a maximum of 20 audio files. The title of the audio file will be set to that of the name of the uploaded file.
@@ -176,7 +172,7 @@
           <br>
           <br>
         </section>
-        <section class="row m-homepage--section">
+        <section class="row">
           <h3>Browse audio files</h3>
           <h4>GET https://api.clyp.it/categorylist</h4>
           Gets a list of Clyp's category lists. To retrieve any of the category lists returned by this resource, follow the 'Location' property with a GET. The result of the secondary GET call will return a list of 10 random audio files that have been tagged with a given category. 
@@ -232,7 +228,7 @@
           <br>
           <br>
         </section>
-        <section class="row m-homepage--section">
+        <section class="row">
           <h3>Playlist</h3>
             <h4>POST https://api.clyp.it/playlist</h4>
             Creates a new empty playlist.
@@ -242,7 +238,6 @@
             <br>
         </section>
       </div>
-    </div>
-      <!-- //End Body\\ -->
+    </div> <!-- //End Body\\ -->
   </body>
 </html>

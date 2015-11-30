@@ -4,6 +4,11 @@
   line-height: 1.4em;
   background-color: #FAFAFA; }
 
+/*// Body \*/
+body {
+  background-color: #FAFAFA;
+  color: #605F59; }
+
 h1, h3 {
   color: #4D4A46; }
 
@@ -12,10 +17,6 @@ h2, h5, h6, p {
 
 h4 {
   color: #3599D5; }
-
-body {
-  background-color: #FAFAFA;
-  color: #605F59; }
 
 .layout-section div {
   padding: 0; }
