@@ -48,7 +48,12 @@ body p a {
   padding-left: 10px;
   padding-bottom: 5px;
 }
-
+.api li {
+  list-style-type: none;
+}
+.api ul {
+  margin-left: 0;
+}
 /*// Side NavBar \\*/
 $include-html-nav-classes: true;
 

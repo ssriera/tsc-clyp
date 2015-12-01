@@ -54,30 +54,23 @@
       </div> <!-- // End Side Nav \\ -->
       <!-- // Body \\ -->
       <div class="small-12 medium-10 large-8 large-offset-2 columns">
-        <section class="row">
+        <section class="row api">
           <h2>Audio file</h2>
           <h2>POST https://upload.clyp.it/upload</h2>
           Upload an audio file. Accepted file types are mp3, ogg, m4a, wav, aiff, aif and 3gpp. Regardless of file type when uploading, a resulting mp3 and ogg will be created and made available. The audio file can be added to a playlist by providing a playlistId and the playlistUploadToken. Otherwise, a new playlist will automatically be created. A playlist can contain a maximum of 20 audio files. The title of the audio file will be set to that of the name of the uploaded file.
-          <br>
-          <br>
-          <p>
-            Parameters:
-            <br>
-            audioFile - The binaries of the audio file.
-            <br>
-            playlistId - Optional. The playlist that the audio file will be added to. If this value is specified, the correct playlistUploadToken must also be included in the request. If this value is not specified, a playlist will be automatically created.
-            <br>
-            playlistUploadToken - Optional. Given to you after you create a playlist. When adding an audio file to an already existing playlist, this value must be provided.
-            <br>
-            order - Optional. The position in which you would like this audio file to appear in the playlist.
-            <br>
-            description - Optional. The description of the audio file. Maximum allowed length is 420 characters.
-            <br>
-            longitude - Optional. The longitude of where the audio file was recorded. If passed in, latitude becomes required. Value must be between -15069 and 15069 degrees.
-            <br>
-            latitude - Optional. The latitude of where the audio file was recorded. If passed in, longitude becomes required. Value must be between -90 and 90 degrees. 
-            <br>
-          </p>
+        <br>
+        <br>
+          <ul>Parameters:
+            <li>audioFile - The binaries of the audio file.</li>
+            <li>playlistId - Optional. The playlist that the audio file will be added to. If this value is specified, the correct playlistUploadToken must also be included in the request. If this value is not specified, a playlist will be automatically created.</li>
+            <li>playlistUploadToken - Optional. Given to you after you create a playlist. When adding an audio file to an already existing playlist, this value must be provided.</li>
+            <li>order - Optional. The position in which you would like this audio file to appear in the playlist.</li>
+            <li>description - Optional. The description of the audio file. Maximum allowed length is 420 characters.</li>
+            <li>description - Optional. The description of the audio file. Maximum allowed length is 420 characters.</li>
+            <li>longitude - Optional. The longitude of where the audio file was recorded. If passed in, latitude becomes required. Value must be between -15069 and 15069 degrees.</li>
+            <li>latitude - Optional. The latitude of where the audio file was recorded. If passed in, longitude becomes required. Value must be between -90 and 90 degrees. </li>
+          </ul>
+        <br>
           <p>
             Uploads are done via a multipart/form-data POST. Consider the following form: 
             <br>
@@ -87,29 +80,19 @@
             <br>
             &lt;input type="submit" value="Send to Clyp"&gt;
             <br>
-            </form> 
+            &lt;/form&gt;
           </p>
-          <p>
-            It will create a request that looks like this: 
-            <br>
-            POST https://upload.clyp.it/upload HTTP/1.1 
-            <br>
-            Host: upload.clyp.it 
-            <br>
-            Connection: keep-alive 
-            <br>
-            Content-Type: multipart/form-data; boundary=---------------------------21632794128452 
-            <br>
-            Content-Length: 5005 
-            <br>
-            -----------------------------21632794128452 
-            <br>
-            Content-Disposition: form-data; name="audioFile"; filename="MyAudioFile.mp3" 
-            <br>
-            Content-Type: audio/mpeg 
-            <br>
-            (Audio file data goes here)
-          </p>
+          <ul>It will create a request that looks like this: 
+            <li>POST https://upload.clyp.it/upload HTTP/1.1 </li>
+            <li>Host: upload.clyp.it </li>
+            <li>Connection: keep-alive </li>
+            <li>Content-Type: multipart/form-data; boundary=---------------------------21632794128452 </li>
+            <li>Content-Length: 5005</li>
+            <li>-----------------------------21632794128452</li>
+            <li>Content-Disposition: form-data; name="audioFile"; filename="MyAudioFile.mp3"</li>
+            <li>Content-Type: audio/mpeg</li>
+            <li>(Audio file data goes here)</li>
+          </ul>
           <br>
           <h2>POST https://upload.clyp.it/uploadurl</h2>
           Upload an audio file by supplying a URL. Accepted file types are mp3, ogg, m4a, wav, aiff, aif and 3gpp. Regardless of file type when uploading, a resulting mp3 and ogg will be created and made available. The audio file can be added to a playlist by providing a playlistId and the playlistUploadToken. Otherwise, a new playlist will automatically be created. A playlist can contain a maximum of 20 audio files.
