@@ -1,16 +1,17 @@
 /*// Globals \\*/
 $primary-font: 'Source Sans Pro', sans-serif;
-$background-color: #FAFAFA;
-$highlight-blue: #3599D5;
 $primary-color: #605F59;
 $title-gray: #4D4A46;
 $nav-primary-link: #7A7773; 
-$nav-text-gray: #C8C7BD;
+$nav-contact-gray: #C8C7BD;
 $nav-link-hover: #3498DB;
 $nav-link-active: #3498DB;
+$background-color: #FAFAFA;
+
 
 * {
 	font-family: $primary-font;
+  font-size: 1rem;
 	line-height: 1.4em;
 	background-color: $background-color;
 }
@@ -21,22 +22,32 @@ body {
 	background-color: $background-color;
 	color:$primary-color;
 }
-h1, h3 {
-	color: $title-gray;
+h1 {
+  color: $title-gray;
+  font-size: 2.25rem;
+  font-weight: bold;
 }
-h2, h5, h6, p {
-	color:$primary-color;
+h2 {
+  color: $title-gray;
+  font-size: 1.5rem;
 }
-h4 {
-	color:$highlight-blue;
+h3, h4, h5, h6, p {
+  color: $primary-color;
 }
 .layout-section div {
 	padding: 0;
 }
 .side-nav p {
-	color:$nav-text-gray;
+  font-weight: normal;
+	color:$nav-contact-gray;
 }
-
+body p a {
+  color: $primary-color;
+}
+.side-nav img {
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
 
 /*// Side NavBar \\*/
 $include-html-nav-classes: true;
@@ -56,9 +67,9 @@ $include-html-nav-classes: true;
       color: $nav-primary-link;
       display: block;
       margin: 0;
-      padding: 0rem; }
+      padding: 0.4rem; }
       .side-nav li a:not(.button):hover, .side-nav li a:not(.button):focus {
-        background: rgba(0, 0, 0, 0.025);
+        background: rgba(0, 0, 0, 0);
         color: $nav-link-hover }
       .side-nav li a:not(.button):active {
         color: $nav-link-active }

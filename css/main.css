@@ -1,6 +1,7 @@
 /*// Globals \*/
 * {
   font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
   line-height: 1.4em;
   background-color: #FAFAFA; }
 
@@ -9,20 +10,31 @@ body {
   background-color: #FAFAFA;
   color: #605F59; }
 
-h1, h3 {
-  color: #4D4A46; }
+h1 {
+  color: #4D4A46;
+  font-size: 2.25rem;
+  font-weight: bold; }
 
-h2, h5, h6, p {
+h2 {
+  color: #4D4A46;
+  font-size: 1.5rem; }
+
+h3, h4, h5, h6, p {
   color: #605F59; }
-
-h4 {
-  color: #3599D5; }
 
 .layout-section div {
   padding: 0; }
 
 .side-nav p {
+  font-weight: normal;
   color: #C8C7BD; }
+
+body p a {
+  color: #605F59; }
+
+.side-nav img {
+  padding-left: 10px;
+  padding-bottom: 5px; }
 
 /*// Side NavBar \*/
 .side-nav {
@@ -42,10 +54,10 @@ h4 {
   color: #7A7773;
   display: block;
   margin: 0;
-  padding: 0rem; }
+  padding: 0.4rem; }
 
 .side-nav li a:not(.button):hover, .side-nav li a:not(.button):focus {
-  background: rgba(0, 0, 0, 0.025);
+  background: transparent;
   color: #3498DB; }
 
 .side-nav li a:not(.button):active {
