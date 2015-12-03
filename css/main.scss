@@ -1,4 +1,7 @@
-/*// Globals \\*/
+/* ----------------- 
+ * GLOBALS        
+ * ----------------- */
+
 $primary-font: 'Source Sans Pro', sans-serif;
 $primary-color: #605F59;
 $title-gray: #4D4A46;
@@ -9,87 +12,128 @@ $nav-link-active: #3498DB;
 $background-color: #FAFAFA;
 
 
+/* ----------------- 
+ * TYPOGRAPHY        
+ * ----------------- */
+
 * {
-	font-family: $primary-font;
+  font-family: $primary-font;
   font-size: 1rem;
-	line-height: 1.4em;
-	background-color: $background-color;
+  line-height: 1.4em;
+  background-color: $background-color;
 }
-
-
- /*// Body \\*/
 body {
-	background-color: $background-color;
-	color:$primary-color;
-}
-h1 {
-  color: $title-gray;
-  font-size: 2.25rem;
-  font-weight: bold;
-}
-h2 {
-  color: $title-gray;
-  font-size: 1.5rem;
+  background-color: $background-color;
+  color:$primary-color;
 }
 h3, h4, h5, h6, p {
   color: $primary-color;
 }
+body p a {
+  color: $primary-color;
+}
+.page-title {
+  color: $title-gray;
+  font-size: 2.25rem;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.sub-title {
+  color: $title-gray;
+  font-size: 1.5rem;
+}
+.text-body {
+  font-family: $primary-font;
+  font-size: 1rem;
+  line-height: 1.4em;
+  background-color: $background-color;
+}
+
+
+/* ----------------- 
+ * STRUCTURE         
+ * ----------------- */
+
 .layout-section div {
 	padding: 0;
 }
+.no-padding {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.top-padding {
+  padding-top:20px;
+}
+
+
+/* ----------------- 
+ * LISTS         
+ * ----------------- */
+
+.list-unstyled {
+  margin:0;
+  padding:0;
+  list-style-type: none;
+}
+
+
+/* ----------------- 
+ * SIDE NAVBAR       
+ * ----------------- */
+
+$include-html-nav-classes: true;
+
 .side-nav p {
   font-weight: normal;
-	color:$nav-contact-gray;
-}
-body p a {
-  color: $primary-color;
+  color:$nav-contact-gray;
 }
 .side-nav img {
   padding-left: 10px;
   padding-bottom: 5px;
 }
-.api li {
-  list-style-type: none;
-}
-.api ul {
-  margin-left: 0;
-}
-/*// Side NavBar \\*/
-$include-html-nav-classes: true;
-
 .side-nav {
   display: block;
   font-family: $primary-font;
   list-style-position: outside;
   list-style-type: none;
   margin: 0.75;
-  padding: 0.75rem 0; }
-  .side-nav li {
-    font-size: 1rem;
-    font-weight: normal;
-    margin: 0 0 0rem 0; }
-    .side-nav li a:not(.button) {
-      color: $nav-primary-link;
-      display: block;
-      margin: 0;
-      padding: 0.4rem; }
-      .side-nav li a:not(.button):hover, .side-nav li a:not(.button):focus {
-        background: rgba(0, 0, 0, 0);
-        color: $nav-link-hover }
-      .side-nav li a:not(.button):active {
-        color: $nav-link-active }
-    .side-nav li.active > a:first-child:not(.button) {
-      color: $nav-link-active;
-      font-family: $primary-font;
-      font-weight: normal; }
-    .side-nav li.divider {
-      border-top: 1px solid;
-      height: 0;
-      list-style: none;
-      padding: 0;
-      border-top-color: none; }
-    .side-nav li.heading {
-      color: $nav-primary-link;
-      font-size: 0.875rem;
-      font-weight: bold;
-      text-transform: uppercase; }
+  padding: 0.75rem 0;
+}
+.side-nav li {
+  font-size: 1rem;
+  font-weight: normal;
+  margin: 0 0 0rem 0;
+}
+.side-nav li a:not(.button) {
+  color: $nav-primary-link;
+  display: block;
+  margin: 0;
+  padding: 0.4rem;
+}
+.side-nav li a:not(.button):hover,
+.side-nav li a:not(.button):focus {
+  background: rgba(0, 0, 0, 0);
+  color: $nav-link-hover;
+}
+.side-nav li a:not(.button):active {
+  color: $nav-link-active;
+}
+.side-nav li.active > a:first-child:not(.button) {
+  color: $nav-link-active;
+  font-family: $primary-font;
+  font-weight: normal;
+}
+.side-nav li.divider {
+  border-top: 1px solid;
+  height: 0;
+  list-style: none;
+  padding: 0;
+  border-top-color: none;
+}
+.side-nav li.heading {
+  color: $nav-primary-link;
+  font-size: 0.875rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}

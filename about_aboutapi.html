@@ -3,7 +3,7 @@
   <head prefix="og: http://ogp.me/ns# dc: http://purl.org/dc/terms/">
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Clyp About API</title>
+    <title>Clyp - About API</title>
     <!-- // Favicon \\ -->
     <link rel="icon" type="image/x-icon" href="//d2cjvbryygm0lr.cloudfront.net/favicon.ico">
     <!-- // Font \\ -->
@@ -25,9 +25,7 @@
     <div class="layout-section text-left">
       <div class="row">
         <div class="small-12 medium-10 large-8 small-offset-4 medum-offset-6 large-offset-4 columns">
-          <br>
-          <h1>API Documentation</h1>
-          <br>
+          <h1 class="page-title">API Documentation</h1>
         </div>
       </div>
     </div> <!-- //End Header \\ -->
@@ -55,174 +53,146 @@
       <!-- // Body \\ -->
       <div class="small-12 medium-10 large-8 large-offset-2 columns">
         <section class="row api">
-          <h2>Audio file</h2>
-          <h2>POST https://upload.clyp.it/upload</h2>
-          <p>
-            Upload an audio file. Accepted file types are mp3, ogg, m4a, wav, aiff, aif and 3gpp. Regardless of file type when uploading, a resulting mp3 and ogg will be created and made available. The audio file can be added to a playlist by providing a playlistId and the playlistUploadToken. Otherwise, a new playlist will automatically be created. A playlist can contain a maximum of 20 audio files. The title of the audio file will be set to that of the name of the uploaded file.
-          </p>
-          <ul>Parameters:
-            <li>audioFile - The binaries of the audio file.</li>
-            <li>playlistId - Optional. The playlist that the audio file will be added to. If this value is specified, the correct playlistUploadToken must also be included in the request. If this value is not specified, a playlist will be automatically created.</li>
-            <li>playlistUploadToken - Optional. Given to you after you create a playlist. When adding an audio file to an already existing playlist, this value must be provided.</li>
-            <li>order - Optional. The position in which you would like this audio file to appear in the playlist.</li>
-            <li>description - Optional. The description of the audio file. Maximum allowed length is 420 characters.</li>
-            <li>description - Optional. The description of the audio file. Maximum allowed length is 420 characters.</li>
-            <li>longitude - Optional. The longitude of where the audio file was recorded. If passed in, latitude becomes required. Value must be between -15069 and 15069 degrees.</li>
-            <li>latitude - Optional. The latitude of where the audio file was recorded. If passed in, longitude becomes required. Value must be between -90 and 90 degrees. </li>
-          </ul>
+          <h2 class="sub-title">Audio file</h2>
+          <h2 class="sub-title">POST https://upload.clyp.it/upload</h2>
+            <p>
+              Upload an audio file. Accepted file types are mp3, ogg, m4a, wav, aiff, aif and 3gpp. Regardless of file type when uploading, a resulting mp3 and ogg will be created and made available. The audio file can be added to a playlist by providing a playlistId and the playlistUploadToken. Otherwise, a new playlist will automatically be created. A playlist can contain a maximum of 20 audio files. The title of the audio file will be set to that of the name of the uploaded file.
+            </p>
+          <h3 class="text-body">Parameters:</h3>
+            <ul class="list-unstyled">
+              <li>audioFile - The binaries of the audio file.</li>
+              <li>playlistId - Optional. The playlist that the audio file will be added to. If this value is specified, the correct playlistUploadToken must also be included in the request. If this value is not specified, a playlist will be automatically created.</li>
+              <li>playlistUploadToken - Optional. Given to you after you create a playlist. When adding an audio file to an already existing playlist, this value must be provided.</li>
+              <li>order - Optional. The position in which you would like this audio file to appear in the playlist.</li>
+              <li>description - Optional. The description of the audio file. Maximum allowed length is 420 characters.</li>
+              <li>longitude - Optional. The longitude of where the audio file was recorded. If passed in, latitude becomes required. Value must be between -15069 and 15069 degrees.</li>
+              <li>latitude - Optional. The latitude of where the audio file was recorded. If passed in, longitude becomes required. Value must be between -90 and 90 degrees. </li>
+            </ul>
+          <br>
+          <h3 class="text-body">Uploads are done via a multipart/form-data POST. Consider the following form:</h3>
+            <ul class="list-unstyled">
+              <li>&lt;form action="https://upload.clyp.it/upload" enctype="multipart/form-data" method="post"&gt; </li>
+              <li>&lt;input type="file" name="audioFile"&gt;</li>
+              <li>&lt;input type="submit" value="Send to Clyp"&gt;</li>
+              <li>&lt;/form&gt;</li>
+            </ul>
+          <br>
+          <h3 class="text-body">It will create a request that looks like this:</h3>
+            <ul class="list-unstyled">
+              <li>POST https://upload.clyp.it/upload HTTP/1.1 </li>
+              <li>Host: upload.clyp.it </li>
+              <li>Connection: keep-alive </li>
+              <li>Content-Type: multipart/form-data; boundary=---------------------------21632794128452 </li>
+              <li>Content-Length: 5005</li>
+              <li>-----------------------------21632794128452</li>
+              <li>Content-Disposition: form-data; name="audioFile"; filename="MyAudioFile.mp3"</li>
+              <li>Content-Type: audio/mpeg</li>
+              <li>(Audio file data goes here)</li>
+            </ul>
+          <br>
+          <h2 class="sub-title">POST https://upload.clyp.it/uploadurl</h2>
+            <p>
+              Upload an audio file by supplying a URL. Accepted file types are mp3, ogg, m4a, wav, aiff, aif and 3gpp. Regardless of file type when uploading, a resulting mp3 and ogg will be created and made available. The audio file can be added to a playlist by providing a playlistId and the playlistUploadToken. Otherwise, a new playlist will automatically be created. A playlist can contain a maximum of 20 audio files.
+            </p>
+          <h3 class="text-body">Parameters:</h3>
+            <ul class="list-unstyled">
+              <li>url - The URL to retrieve the audio file from.</li>
+              <li>playlistId - Optional. The playlist that the audio file will be added to. If this value is specified, the correct playlistUploadToken must also be included in the request. If this value is not specified, a playlist will be automatically created.</li>
+              <li>playlistUploadToken - Optional. Given to you after you create a playlist. When adding an audio file to an already existing playlist, this value must be provided.</li>
+            </ul>
+          <br>
+          <h3 class="text-body">Headers: </h3>
+            <p>Content-Type: application/json</p>
+          <h2 class="sub-title">GET https://api.clyp.it/{id}</h2>
+            <p>
+              Gets all relevant metadata of an audio file. This includes location of the mp3 and ogg files, title, description, duration of audio file in seconds, URL of the player page for the given audio file, and latitude/longitude of where the audio file was recorded.
+            </p>
+          <br>
+          <h2 class="sub-title">PATCH https://api.clyp.it/{id}</h2>
+            <p>Authenticated owners can update the title and/or description and/or status of their audio file.</p>
+          <h3 class="text-body">Parameters:</h3> 
+            <ul class="list-unstyled">
+              <li>title - Title of the audio file. Maximum of 250 characters.</li>
+              <li>description - Description of the audio file. Maximum of 420 characters.</li>
+              <li>status - Public, Private, Deleted, DownloadDisabled, PrivateDownloadDisabled</li>
+            </ul>
+          <br>
+          <h3 class="text-body">Headers:</h3>
+            <p>Content- Type: application/json</p>
+          <br>
+          <h2 class="sub-title">DELETE https://api.clyp.it/{id}</h2>
+            <p>Authenticated owners can delete their audio file.</p>
+          <br>
+          <h2 class="sub-title">GET https://api.clyp.it/{id}.mp3</h2>
+            <p>
+              Gets the MP3 encoded audio file. Expect a 302 redirect, even though this might not always be the case. The file will have a sample rate of 44100 Hz and a bit rate of 128 kb/s.
+            </p>
+          <br>
+          <h2 class="sub-title">GET https://api.clyp.it/{id}.ogg</h2> 
+            <p>
+              Gets the OGG encoded audio file. Expect a 302 redirect, even though this might not always be the case. The file will have a sample rate of 44100 Hz and a bit rate of 112 kb/s. 
+            </p>
+          <br>
+          <h2 class="sub-title">GET https://api.clyp.it/{id}/soundwave</h2>
+            <p>
+              Gets the sound wave of the audio file, represented by 4,000 equidistant data points. Regardless of the time duration of the audio file, 4,000 data points will always be returned. Each data point is an integer value with a range of 0 - 100, representing the amplitude at that proportionate point in time. For example, consider an audio file that is 42 seconds long. The 2,000th data point returned represents the amplitude of the audio at the 21 second mark. 
+            </p>
+          <br>
+          <h2 class="sub-title">GET https://api.clyp.it/{id}/playlist</h2>
+            <p>Gets the playlist that this audio file belongs to. A playlist can hold a maximum of 20 audio files.</p> 
+        </section>
         <br>
-          <p>
-            Uploads are done via a multipart/form-data POST. Consider the following form: 
-            <br>
-            &lt;form action="https://upload.clyp.it/upload" enctype="multipart/form-data" method="post"&gt; 
-            <br>
-            &lt;input type="file" name="audioFile"&gt;
-            <br>
-            &lt;input type="submit" value="Send to Clyp"&gt;
-            <br>
-            &lt;/form&gt;
-          </p>
-          <ul>It will create a request that looks like this: 
-            <li>POST https://upload.clyp.it/upload HTTP/1.1 </li>
-            <li>Host: upload.clyp.it </li>
-            <li>Connection: keep-alive </li>
-            <li>Content-Type: multipart/form-data; boundary=---------------------------21632794128452 </li>
-            <li>Content-Length: 5005</li>
-            <li>-----------------------------21632794128452</li>
-            <li>Content-Disposition: form-data; name="audioFile"; filename="MyAudioFile.mp3"</li>
-            <li>Content-Type: audio/mpeg</li>
-            <li>(Audio file data goes here)</li>
-          </ul>
-          <br>
-          <h2>POST https://upload.clyp.it/uploadurl</h2>
-          <p>
-            Upload an audio file by supplying a URL. Accepted file types are mp3, ogg, m4a, wav, aiff, aif and 3gpp. Regardless of file type when uploading, a resulting mp3 and ogg will be created and made available. The audio file can be added to a playlist by providing a playlistId and the playlistUploadToken. Otherwise, a new playlist will automatically be created. A playlist can contain a maximum of 20 audio files.
-          </p>
-          <p>
-            Parameters:
-            <br> 
-            url - The URL to retrieve the audio file from.
-            <br>
-            playlistId - Optional. The playlist that the audio file will be added to. If this value is specified, the correct playlistUploadToken must also be included in the request. If this value is not specified, a playlist will be automatically created.
-            <br>
-            playlistUploadToken - Optional. Given to you after you create a playlist. When adding an audio file to an already existing playlist, this value must be provided.
-          </p>
-          <p>
-            Headers: 
-            <br>
-            Content-Type: application/json
-          </p>
-          <h2>GET https://api.clyp.it/{id}</h2>
-          <p>
-            Gets all relevant metadata of an audio file. This includes location of the mp3 and ogg files, title, description, duration of audio file in seconds, URL of the player page for the given audio file, and latitude/longitude of where the audio file was recorded.
-          </p>
-          <h2>PATCH https://api.clyp.it/{id}</h2>
-          <p>
-            Authenticated owners can update the title and/or description and/or status of their audio file.
-          </p>
-          <p>
-            Parameters: 
-            <br>
-            title - Title of the audio file. Maximum of 250 characters.
-            <br>
-            description - Description of the audio file. Maximum of 420 characters.
-            <br>
-            status - Public, Private, Deleted, DownloadDisabled, PrivateDownloadDisabled
-          </p>
-          <p>
-            Headers:
-            <br>
-            Content- Type: application/json
-          </p>
-          <h2>DELETE https://api.clyp.it/{id}</h2>
-          <p>
-            Authenticated owners can delete their audio file. 
-          </p>
-          <h2>GET https://api.clyp.it/{id}.mp3</h2>
-          <p>
-            Gets the MP3 encoded audio file. Expect a 302 redirect, even though this might not always be the case. The file will have a sample rate of 44100 Hz and a bit rate of 128 kb/s.
-          </p>
-          <h2>GET https://api.clyp.it/{id}.ogg</h2> 
-          <p>
-            Gets the OGG encoded audio file. Expect a 302 redirect, even though this might not always be the case. The file will have a sample rate of 44100 Hz and a bit rate of 112 kb/s. 
-          </p>
-          <h2>GET https://api.clyp.it/{id}/soundwave</h2>
-          <p>
-            Gets the sound wave of the audio file, represented by 4,000 equidistant data points. Regardless of the time duration of the audio file, 4,000 data points will always be returned. Each data point is an integer value with a range of 0 - 100, representing the amplitude at that proportionate point in time. For example, consider an audio file that is 42 seconds long. The 2,000th data point returned represents the amplitude of the audio at the 21 second mark. 
-          </p>
-          <h2>GET https://api.clyp.it/{id}/playlist</h2>
-          <p>
-            Gets the playlist that this audio file belongs to. A playlist can hold a maximum of 20 audio files.
-          </p> 
-        </section>
         <section class="row">
-          <h2>Browse audio files</h2>
-          <h2>GET https://api.clyp.it/categorylist</h2>
-          <p>
-            Gets a list of Clyp's category lists. To retrieve any of the category lists returned by this resource, follow the 'Location' property with a GET. The result of the secondary GET call will return a list of 10 random audio files that have been tagged with a given category. 
-          </p>
-          <h2>GET https://api.clyp.it/featuredlist</h2>
-          <p>
-            Gets a list of Clyp's featured lists. To retrieve any of the featured lists returned by this resource, follow the 'Location' property with a GET. More information on some of these featured lists is provided in this section of documentation. 
-          </p>
-          <h2>GET https://api.clyp.it/featuredlist/nearby</h2>
-          <p>
-            Get audio files that were uploaded near a given location. For best results, pass in both latitude and longitude as query string parameters. If latitude and longitude are not passed in, we will geocode the requesting IP address and the resulting latitude and longitude will be used.
-          </p>
-          <p>Parameters: 
-            <br>
-            count - Optional. Limits number of results. Valid range of 1 - 100. Default value is 10.
-            <br>
-            longitude - Optional. The longitude to use when searching for nearby audio files. If passed in, latitude becomes required. Value must be between -15069 and 15069 degrees.
-            <br>
-            latitude - Optional. The latitude to use when searching for nearby audio files. If passed in, longitude becomes required. Value must be between -90 and 90 degrees.
-          </p>
+          <h2 class="sub-title">Browse audio files</h2>
+          <h2 class="sub-title">GET https://api.clyp.it/categorylist</h2>
+            <p>
+              Gets a list of Clyp's category lists. To retrieve any of the category lists returned by this resource, follow the 'Location' property with a GET. The result of the secondary GET call will return a list of 10 random audio files that have been tagged with a given category. 
+            </p>
           <br>
-          <h2>GET https://api.clyp.it/featuredlist/popular</h2>
-          Gets the most played autdio files over the last 3 days.
+          <h2 class="sub-title">GET https://api.clyp.it/featuredlist</h2>
+            <p>
+              Gets a list of Clyp's featured lists. To retrieve any of the featured lists returned by this resource, follow the 'Location' property with a GET. More information on some of these featured lists is provided in this section of documentation. 
+            </p>
           <br>
-          <p>Parameters: 
-            <br>
-            count - Optional. Limits number of results. Valid range of 1 - 100. Default value is 10. 
-          </p>
+          <h2 class="sub-title">GET https://api.clyp.it/featuredlist/nearby</h2>
+            <p>
+              Get audio files that were uploaded near a given location. For best results, pass in both latitude and longitude as query string parameters. If latitude and longitude are not passed in, we will geocode the requesting IP address and the resulting latitude and longitude will be used.
+            </p>
+          <h3 class="text-body">Parameters: </h3>
+            <ul class="list-unstyled">
+              <li>count - Optional. Limits number of results. Valid range of 1 - 100. Default value is 10.</li>
+              <li>longitude - Optional. The longitude to use when searching for nearby audio files. If passed in, latitude becomes required. Value must be between -15069 and 15069 degrees.</li>
+              <li>latitude - Optional. The latitude to use when searching for nearby audio files. If passed in, longitude becomes required. Value must be between -90 and 90 degrees.</li>
+            </ul>
           <br>
-          <h2>GET https://api.clyp.it/featuredlist/random</h2>
-          Gets a random list of audio files.
+          <h2 class="sub-title">GET https://api.clyp.it/featuredlist/popular</h2>
+            <p>Gets the most played autdio files over the last 3 days.</p>
+          <h3 class="text-body">Parameters: </h3>
+            <p>count - Optional. Limits number of results. Valid range of 1 - 100. Default value is 10. </p>
           <br>
+          <h2 class="sub-title">GET https://api.clyp.it/featuredlist/random</h2>
+            <p>Gets a random list of audio files.</p>
+          <h3 class="text-body">Parameters:</h3> 
+            <p>count - Optional. Limits number of results. Valid range of 1 - 100. Default value is 10. </p>
           <br>
-          <p>Parameters: 
-            <br>
-            count - Optional. Limits number of results. Valid range of 1 - 100. Default value is 10. 
-          </p>
+          <h2 class="sub-title">GET https://api.clyp.it/featuredlist/recent</h2>
+            <p>Gets a random list of audio files.</p>
+          <h3 class="text-body">Parameters: </h3>
+            <p>count - Optional. Limits number of results. Valid range of 1 - 100. Default value is 10. </p>
           <br>
-          <h2>GET https://api.clyp.it/featuredlist/recent</h2>
-          Gets a random list of audio files.
-          <br>
-          <br>
-          <p>Parameters: 
-            <br>
-            count - Optional. Limits number of results. Valid range of 1 - 100. Default value is 10. 
-          </p>
-          <br>
-          <h2>GET https://api.clyp.it/featuredlist/featured</h2>
-          Gets a random list of audio files.
-          <br>
-          <br>
-          <p>Parameters: 
-            <br>
-            count - Optional. Limits number of results. Valid range of 1 - 100. Default value is 10. 
-          </p>
-          <br>
+          <h2 class="sub-title">GET https://api.clyp.it/featuredlist/featured</h2>
+            <p>Gets a random list of audio files.</p>
+          <h3 class="text-body">Parameters: </h3>
+            <p>count - Optional. Limits number of results. Valid range of 1 - 100. Default value is 10. </p>
           <br>
         </section>
         <section class="row">
-          <h2>Playlist</h2>
-          <h2>POST https://api.clyp.it/playlist</h2>
-            Creates a new empty playlist.
-            <br>
-          <h2>GET https://api.clyp.it/playlist/{id}</h2>
-            Gets the playlist. A playlist can hold a maximum of 20 audio files.
-            <br>
+          <h2 class="sub-title">Playlist</h2>
+          <h2 class="sub-title">POST https://api.clyp.it/playlist</h2>
+            <p>Creates a new empty playlist.</p>
+          <h2 class="sub-title">GET https://api.clyp.it/playlist/{id}</h2>
+            <p>Gets the playlist. A playlist can hold a maximum of 20 audio files.</p>
+          <br>
         </section>
       </div>
     </div> <!-- //End Body\\ -->

@@ -1,48 +1,74 @@
-/*// Globals \*/
+/* ----------------- 
+ * GLOBALS        
+ * ----------------- */
+/* ----------------- 
+ * TYPOGRAPHY        
+ * ----------------- */
 * {
   font-family: "Source Sans Pro", sans-serif;
   font-size: 1rem;
   line-height: 1.4em;
   background-color: #FAFAFA; }
 
-/*// Body \*/
 body {
   background-color: #FAFAFA;
   color: #605F59; }
 
-h1 {
-  color: #4D4A46;
-  font-size: 2.25rem;
-  font-weight: bold; }
-
-h2 {
-  color: #4D4A46;
-  font-size: 1.5rem; }
-
 h3, h4, h5, h6, p {
   color: #605F59; }
 
+body p a {
+  color: #605F59; }
+
+.page-title {
+  color: #4D4A46;
+  font-size: 2.25rem;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px; }
+
+.sub-title {
+  color: #4D4A46;
+  font-size: 1.5rem; }
+
+.text-body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 1rem;
+  line-height: 1.4em;
+  background-color: #FAFAFA; }
+
+/* ----------------- 
+ * STRUCTURE         
+ * ----------------- */
 .layout-section div {
   padding: 0; }
 
+.no-padding {
+  padding-top: 0px;
+  padding-bottom: 0px; }
+
+.top-padding {
+  padding-top: 20px; }
+
+/* ----------------- 
+ * LISTS         
+ * ----------------- */
+.list-unstyled {
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+/* ----------------- 
+ * SIDE NAVBAR       
+ * ----------------- */
 .side-nav p {
   font-weight: normal;
   color: #C8C7BD; }
-
-body p a {
-  color: #605F59; }
 
 .side-nav img {
   padding-left: 10px;
   padding-bottom: 5px; }
 
-.api li {
-  list-style-type: none; }
-
-.api ul {
-  margin-left: 0; }
-
-/*// Side NavBar \*/
 .side-nav {
   display: block;
   font-family: "Source Sans Pro", sans-serif;
@@ -62,7 +88,8 @@ body p a {
   margin: 0;
   padding: 0.4rem; }
 
-.side-nav li a:not(.button):hover, .side-nav li a:not(.button):focus {
+.side-nav li a:not(.button):hover,
+.side-nav li a:not(.button):focus {
   background: transparent;
   color: #3498DB; }
 
